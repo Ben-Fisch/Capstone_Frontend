@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Switch, Route, Redirect } from "react-router-dom";
 import jwtDecode from 'jwt-decode';
+import Chart from 'chart.js/auto';
+
 
 class App extends Component {
     constructor(props) {
@@ -15,6 +17,7 @@ class App extends Component {
                 <h1>Hello World</h1>
 
                 <div>
+                    
                     
                 </div>
 
