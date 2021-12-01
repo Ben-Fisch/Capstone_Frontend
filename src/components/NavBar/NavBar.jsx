@@ -15,8 +15,10 @@ const NavBar = ({user}) => {
 <nav>
             
             {user && <h4> Welcome {user.username} </h4>}
+            
             <ul>
                 <React.Fragment>
+                        
                         <Link to ='/Home'> <li>Home</li> </Link>
                         <Link to ='/Profile'> <li>Profile</li> </Link>
                         <Link to ='/Lifting'> <li>Lift</li> </Link>

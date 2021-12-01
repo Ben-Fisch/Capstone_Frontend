@@ -4,6 +4,8 @@ import jwtDecode from 'jwt-decode';
 import Chart from 'chart.js/auto';
 import Footer from './Footer/Footer';
 import NavBar from './NavBar/NavBar';
+import Register from './Register/Register';
+import Login from './Login/Login';
 
 class App extends Component {
     constructor(props) {
@@ -17,7 +19,8 @@ class App extends Component {
             <div>
                 <NavBar/>
                 <h1>Hello World</h1>
-
+                <Register/>
+                <Login/>
                 <Footer/>
 
             </div>
