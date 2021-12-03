@@ -11,13 +11,20 @@ const DisplayWeight = (props) => {
         let response2 = await axios.get('http://127.0.0.1:8000/api/weight/weight/', { headers: { Authorization: 'Bearer ' + localStorage.getItem('token') } })
         setWeights(response2.data)
     }
-    
+
+    const deleteWeight = async (id) => {
+        let response = await axios.delete('http://127.0.0.1:8000/api/weight/weight/' + id + '/', { headers: { Authorization: 'Bearer ' + localStorage.getItem('token') } });
+        getWeight()
+    }
+
     useEffect(async() => {
         getWeight()
     }, [])
 
     return (
-        <div>
+        <div >
+            <h1>Weight Log</h1>
+
             <AddWeight getWeight={getWeight}/>
             <table className="table-container">
                 <thead>
@@ -32,9 +39,7 @@ const DisplayWeight = (props) => {
                             <tr>                        
                                 <td>{weight.date}</td>
                                 <td>{weight.weight} lbs</td>
-                                
-                                {/* <td><button class="btn btn-outline-light btn-lg" type="button" onClick={() => handleChange(product.id)}>Add to Cart</button></td> */}
-
+                                <td><button type="button" className="btn btn-danger" onClick={() => deleteWeight(weight.id)}>Delete</button></td>
                             </tr>              
                         </tbody>
                     )

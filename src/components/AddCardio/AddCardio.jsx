@@ -25,19 +25,23 @@ const AddCardio = (props) => {
         let response = await axios.post('http://127.0.0.1:8000/api/cardio/cardio/',newCardio,{ headers: { Authorization: 'Bearer ' + localStorage.getItem('token') } })
         console.log(response)
         props.getCardio()
+        window.location = ('/Cardio')
     }    
 
     return (
-        <form onSubmit={ handleSubmit}>
-            <label>Date</label>
-            <input type="date" onChange={(e)=>setDate(e.target.value) }></input>
-            <label>Activity</label>
-            <input type="text" onChange={(e)=>setActivity(e.target.value) }></input>
-            <label>Distance</label>
-            <input type="number" onChange={(e)=>setDistance(e.target.value) }></input>
-            <label>Time</label>
-            <input type="number" onChange={(e)=>setTime(e.target.value) }></input>
-            <button type="submit">Submit</button>
+        <form onSubmit={handleSubmit}>
+            <div>
+                <label>Date</label>
+                <input type="date" onChange={(e)=>setDate(e.target.value) }></input>
+            
+                <label>Activity</label>
+                <input type="text" onChange={(e)=>setActivity(e.target.value) }></input>
+                <label>Distance</label>
+                <input type="number" onChange={(e)=>setDistance(e.target.value) }></input>
+                <label>Time</label>
+                <input type="number" onChange={(e)=>setTime(e.target.value) }></input>
+                <button type="submit">Log it!</button>
+            </div>
         </form>
     )
 }

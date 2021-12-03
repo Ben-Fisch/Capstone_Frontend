@@ -9,6 +9,7 @@ import Login from './Login/Login';
 import axios from 'axios';
 import DisplayWeight from './DisplayWeight/DisplayWeight';
 import DisplayCardio from './DisplayCardio/DisplayCardio';
+import DisplayLifting from './DisplayLifting/DisplayLifting';
 
 class App extends Component {
     constructor(props) {
@@ -17,7 +18,8 @@ class App extends Component {
             loggedInUser: null,
             jwt: "",
             weights: [],
-            cardios: []
+            cardios: [],
+            lifts: []
         }
     }
 
@@ -84,7 +86,8 @@ class App extends Component {
                 <Route path='/Register' render={props => <Register {...props} registerNewUser={this.registerNewUser}/>} /> 
                 <Route path='/Login' render={props => <Login {...props} loginUser={this.loginUser}/>} />
                 <Route path='/Weight' render={props => <DisplayWeight {...props} weights={this.state.weights} />} />
-                <Route path='/Cardio' render={props => <DisplayCardio {...props} cardios={this.state.cardios}/>} />
+                <Route path='/Cardio' render={props => <DisplayCardio {...props} cardios={this.state.cardios} />} />
+                <Route path='/Lifting' render={props => <DisplayLifting {...props} lifts={this.state.lifts}/>} />
                 </Switch>
                 <Footer/>
             </div>

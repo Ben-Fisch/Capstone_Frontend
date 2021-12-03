@@ -23,12 +23,16 @@ const AddWeight = (props) => {
     }    
 
     return (
-        <form onSubmit={ handleSubmit}>
-            <label>Date</label>
-            <input type="date" onChange={(e)=>setDate(e.target.value) }></input>
-            <label>Weight</label>
-            <input type="number" onChange={(e)=>setWeight(e.target.value) }></input>
-            <button type="submit">Submit</button>
+        <form className="form-inline" onSubmit={handleSubmit}>
+            <div className="form-group">
+                <label for="date">Date:</label>
+                <input type="date" className="form-control" id="date" onChange={(e)=>setDate(e.target.value) }></input>
+            </div>
+            <div className="form-group">
+                <label for="weight">Weight</label>
+                <input type="number" className="form-control" id="weight" onChange={(e)=>setWeight(e.target.value) }></input>
+            </div>
+            <button type="submit" className="btn btn-primary">Submit</button>
         </form>
     )
 }

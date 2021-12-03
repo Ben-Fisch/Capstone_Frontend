@@ -10,14 +10,22 @@ const DisplayCardio = (props) => {
     const getCardio = async () => {
         let response2 = await axios.get('http://127.0.0.1:8000/api/cardio/cardio/', { headers: { Authorization: 'Bearer ' + localStorage.getItem('token') } })
         setCardios(response2.data)
+        
     }
     
+    const deleteCardio = async (id) => {
+        let response = await axios.delete('http://127.0.0.1:8000/api/cardio/cardio/' + id + '/', { headers: { Authorization: 'Bearer ' + localStorage.getItem('token') } });
+        getCardio()
+    }
+
     useEffect(async() => {
         getCardio()
     }, [])
 
     return (
         <div>
+            <h1>Cardio Log</h1>
+
             <AddCardio getCardio={getCardio}/>
             <table className="table-container">
                 <thead>
@@ -36,8 +44,7 @@ const DisplayCardio = (props) => {
                                 <td>{cardio.activity}</td>
                                 <td>{cardio.distance} miles</td>
                                 <td>{cardio.time} min</td>
-                                
-                                {/* <td><button class="btn btn-outline-light btn-lg" type="button" onClick={() => handleChange(product.id)}>Add to Cart</button></td> */}
+                                <td><button type="button" className="btn btn-danger" onClick={() => deleteCardio(cardio.id)}>Delete</button></td>
 
                             </tr>              
                         </tbody>
