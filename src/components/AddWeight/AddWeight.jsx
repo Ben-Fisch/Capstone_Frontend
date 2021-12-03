@@ -1,6 +1,7 @@
 import axios from 'axios'
 import jwtDecode from 'jwt-decode'
 import react, { useState } from 'react'
+import './AddWeight.css'
 
 
 const AddWeight = (props) => {
