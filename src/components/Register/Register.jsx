@@ -5,12 +5,12 @@ class Register extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            firstname:"",
-            lastname:"",
-            username:"",
-            password:"",
+            username: "",
+            password: "",
             email:"",
-            phonenumber:"",
+            first_name:"",
+            last_name:"",
+            middle_name:"",
          };
     }
 
@@ -23,21 +23,21 @@ class Register extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
         const user = {
-            firstname: this.state.firstname,
-            lastname: this.state.lastname,
             username: this.state.username,
-            password:this.state.password,
+            password: this.state.password,
             email: this.state.email,
-            phonenumber: this.state.phonenumber,
+            first_name: this.state.first_name,
+            last_name: this.state.last_name,
+            middle_name: this.state.middle_name,
         };
         this.props.registerNewUser(user);
         this.setState({
-            firstname: "",
-            lastname: "",
             username: "",
             password: "",
             email: "",
-            phonenumber: "",
+            first_name: "",
+            last_name: "",
+            middle_name: "",
         });
     }
 
@@ -54,12 +54,12 @@ class Register extends Component {
                 </div>
 
                 <div class="form-outline form-white mb-2">
-                  <input type="text" name = "firstname" id="typeFirstNameX" class="form-control form-control-lg" onChange={this.handleChange} value={this.state.firstname} />
+                  <input type="text" name = "first_name" id="typeFirstNameX" class="form-control form-control-lg" onChange={this.handleChange} value={this.state.first_name} />
                   <label class="form-label fs-6 fw-bold" for="typeFirstNameX">First Name</label>
                 </div>
 
                 <div class="form-outline form-white mb-2">
-                  <input type="text" name = "lastname" id="typeLastNameX" class="form-control form-control-lg" onChange={this.handleChange} value={this.state.lastname} />
+                  <input type="text" name = "last_name" id="typeLastNameX" class="form-control form-control-lg" onChange={this.handleChange} value={this.state.last_name} />
                   <label class="form-label fs-6 fw-bold" for="typeLastNameX">Last Name</label>
                 </div>
                 <div class="form-outline form-white mb-2">
@@ -75,8 +75,8 @@ class Register extends Component {
                   <label class="form-label fs-6 fw-bold" for="typeEmailX">Email</label>
                 </div>
                 <div class="form-outline form-white mb-4">
-                  <input type="text" name = "phonenumber" id="typePhonenumberX" class="form-control form-control-lg" onChange={this.handleChange} value={this.state.phonenumber} />
-                  <label class="form-label fs-6 fw-bold" for="typePhonenumberX">Phone Number</label>
+                  <input type="text" name = "middle_name" id="typeMiddleNameX" class="form-control form-control-lg" onChange={this.handleChange} value={this.state.middle_name} />
+                  <label class="form-label fs-6 fw-bold" for="typeMiddleNameX">Middle Name</label>
                 </div>
                 <div class="card-footer">
                     <button class="btn btn-outline-light btn-lg" type="submit">Register</button>

@@ -1,0 +1,44 @@
+.table-container {
+    margin-top: 1%;
+    flex-direction: column;
+    gap: 10px;
+    padding: .25%;
+  }
+  
+  table {
+    margin-left: .85%;
+    margin-right: .5%;
+    justify-self: center;
+    border-collapse: collapse;
+    width: 98%;
+    
+  }
+  
+  th, td {
+    border: 3px solid white;
+    border-radius: 2px;
+    text-align: left;
+    padding: .5%;
+    font-size: 18px;
+    font-weight: 500;
+    color: black;
+  }
+  
+  th {
+    background-color: rgba(128, 128, 128, 0.473);
+    text-align: center;
+    padding: 16px;
+    list-style-type: none;
+    margin: 1%;
+    padding: .25%;
+    border-radius: 5px;
+  }
+  
+  td {
+    background-color: white;
+  }
+  
+  form {
+    display: flex;
+    gap: 5px;
+  }

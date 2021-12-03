@@ -20,7 +20,7 @@ const NavBar = ({user}) => {
                 <React.Fragment>
                         
                         <Link to ='/Home'> <li>Home</li> </Link>
-                        <Link to ='/Profile'> <li>Profile</li> </Link>
+                        <Link to ='/Weight'> <li>Weight</li> </Link>
                         <Link to ='/Lifting'> <li>Lift</li> </Link>
                         <Link to ='/Cardio'> <li>Cardio</li> </Link>
                         <Link onClick={() => logoutUser()}> <li> Logout </li></Link>
