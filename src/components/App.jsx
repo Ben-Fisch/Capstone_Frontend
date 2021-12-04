@@ -10,6 +10,8 @@ import axios from 'axios';
 import DisplayWeight from './DisplayWeight/DisplayWeight';
 import DisplayCardio from './DisplayCardio/DisplayCardio';
 import DisplayLifting from './DisplayLifting/DisplayLifting';
+import DisplayCardioPR from './DisplayCardioPR/DisplayCardioPR';
+import DisplayLiftingPR from './DisplayLiftPR/DisplayLiftPR';
 
 class App extends Component {
     constructor(props) {
@@ -19,7 +21,9 @@ class App extends Component {
             jwt: "",
             weights: [],
             cardios: [],
-            lifts: []
+            lifts: [],
+            pr_cardios: [],
+            pr_lifts: []
         }
     }
 
@@ -87,7 +91,9 @@ class App extends Component {
                 <Route path='/Login' render={props => <Login {...props} loginUser={this.loginUser}/>} />
                 <Route path='/Weight' render={props => <DisplayWeight {...props} weights={this.state.weights} />} />
                 <Route path='/Cardio' render={props => <DisplayCardio {...props} cardios={this.state.cardios} />} />
-                <Route path='/Lifting' render={props => <DisplayLifting {...props} lifts={this.state.lifts}/>} />
+                <Route path='/Lifting' render={props => <DisplayLifting {...props} lifts={this.state.lifts} />} />
+                <Route path='/CardioPR' render={props => <DisplayCardioPR {...props} pr_cardios={this.state.pr_cardios} />} />    
+                <Route path='/LiftingPR' render={props => <DisplayLiftingPR {...props} pr_lifts={this.state.pr_lifts} />} />    
                 </Switch>
                 <Footer/>
             </div>
