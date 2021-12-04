@@ -25,6 +25,7 @@ const AddLift = (props) => {
         let response = await axios.post('http://127.0.0.1:8000/api/lift/lifts/',newLift,{ headers: { Authorization: 'Bearer ' + localStorage.getItem('token') } })
         console.log(response)
         props.getLifts()
+        window.location = ('/Lifting')
     }    
 
     return (

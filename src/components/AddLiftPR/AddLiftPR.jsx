@@ -24,7 +24,8 @@ const AddLiftPR = (props) => {
         console.log(newLiftPR)
         let response = await axios.post('http://127.0.0.1:8000/api/prlift/prlifts/',newLiftPR,{ headers: { Authorization: 'Bearer ' + localStorage.getItem('token') } })
         console.log(response)
-        props.getLiftsPR()
+        props.getPRLifts()
+        window.location = ('/LiftingPR')
     }    
 
     return (

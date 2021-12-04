@@ -20,6 +20,7 @@ const AddWeight = (props) => {
         let response = await axios.post('http://127.0.0.1:8000/api/weight/weight/',newWeight,{ headers: { Authorization: 'Bearer ' + localStorage.getItem('token') } })
         console.log(response)
         props.getWeight()
+        window.location = ('/Weight')
     }    
 
     return (
