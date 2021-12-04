@@ -10,7 +10,7 @@ ul {
     padding: .25%;
     border-radius: 15px;
     overflow: hidden;
-    background-color: hsl(152, 94%, 57%);
+    background-color: #3adb98;
     float:none;
 }
 nav {
@@ -69,24 +69,3 @@ input:hover,
     opacity: 1;
 }
  
-/* style the submit button */
-button[type="button"] {
-    border-radius: 10px;
-    padding: 6px 5px 5px 18px;
-    background-color: #567956;
-    color: black;
-    cursor: pointer;
-    width: 60px;
-    height: auto;
-}
- 
-button[type="submit"]:hover {
-    background-color: #45a049;
-    width: 50px;
-    border-radius: 10px;
-    padding: 6px 5px 5px 18px;
-    color: white;
-    cursor: pointer;
-    width: 60px;
-    height: auto;
-}

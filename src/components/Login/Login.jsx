@@ -37,43 +37,42 @@ class Login extends Component {
     render() {
         return (
           
-        <div className="container">
-
-            <form onSubmit={this.handleSubmit} className="form-signin">
-                    <div className="row">
-                        <div className="col">
-                            <div>
-                            <h1 className="fs-1 fw-bold mb-5 text-uppercase">Login</h1>
+            
+                <form onSubmit={this.handleSubmit}>
+                        <div className="container">
+                            <h1 className="loginheader">Login</h1>
+                            <p className="action">Please enter your username and password!</p>
+                            <hr />
+                            <div >
+                                <label for="username">Username</label>
+                                <input type="text" name= "username" placeholder="Enter Username" id="username" onChange={this.handleChange} value={this.state.username}  />    
                             </div>
-                            <p className="fs-5 text-white-50 mb-4">Please enter your username and password!</p>
-
-                            <div className="form-outline form-white mb-4">
-                                <input type="text" name= "username" id="typeUsernameX" class="form-control form-control-lg" onChange={this.handleChange} value={this.state.username}  />
-                                <label className="form-label fs-5 fw-bold" for="typeUsernameX">Username</label>
+                            <div >
+                                <label for="password" >Password</label>
+                                <input type="password" name= "password" placeholder="Enter Password" id="password" onChange={this.handleChange} value={this.state.password} />
                             </div>
-
-                            <div className="form-outline form-white mb-4">
-                                <input type="password" name= "password" id="typePasswordX" class="form-control form-control-lg" onChange={this.handleChange} value={this.state.password} />
-                                <label className="form-label fs-5 fw-bold" for="typePasswordX">Password</label>
+                            
+                            <div >
+                                <div>
+                                    <button type="submit" className="loginbtn">Login</button>
+                                </div>
+                                <div className="container register">
+                                    <p>Don't have an account? <a href="/Register">Register</a> </p>
+                                </div>
+                                                
+                                    
+                                    
+                                    
                             </div>
-                            <div className="card-footer">
-                            <div>
-                            <button className="btn btn-outline-light btn-lg" type="submit">Login</button>
-                            </div>                  
-                                <Link to ='/Register'>
-                                    <button className="btn btn-outline-light btn-lg" type="submit">Register</button>
-                                </Link>
-                            </div>
+                            
+                            
                         </div>
                         
-                    </div>
-                    
-            </form>
+                </form>
 
-        </div>
+         
 
-
-     )
+        )
     }
 }
 
