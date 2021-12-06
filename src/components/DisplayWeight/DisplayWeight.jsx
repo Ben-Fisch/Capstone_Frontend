@@ -22,11 +22,12 @@ const DisplayWeight = (props) => {
     }, [])
 
     return (
-        <div >
-            <h1>Weight Log</h1>
+        <div className="container display-weight" >
+            <h1 className="weight-title">Your Daily Weight Log</h1>
+            <p className="weight-para">Enter data below to log your weight!</p>
 
             <AddWeight getWeight={getWeight}/>
-            <table className="table-container">
+            <table className="weight-table" >
                 <thead>
                     <tr>
                         <th>Date</th>
@@ -39,7 +40,7 @@ const DisplayWeight = (props) => {
                             <tr>                        
                                 <td>{weight.date}</td>
                                 <td>{weight.weight} lbs</td>
-                                <td><button type="button" className="btn btn-danger" onClick={() => deleteWeight(weight.id)}>Delete</button></td>
+                                <td><button type="button" className="btn btn-danger delete-button" onClick={() => deleteWeight(weight.id)}>Delete</button></td>
                             </tr>              
                         </tbody>
                     )

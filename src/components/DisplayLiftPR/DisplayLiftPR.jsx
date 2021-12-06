@@ -23,7 +23,8 @@ const DisplayLiftingPR = (props) => {
 
     return (
         <div>
-            <h1>Lifting PR Log</h1>
+            <h1 className="lift-pr-header">Lifting Personal Record Log</h1>
+            <p className="lift-pr-para">Set a lifting record? Log it!</p>
 
             <AddLiftPR getPRLifts={getPRLifts}/>
             <table className="table-container">

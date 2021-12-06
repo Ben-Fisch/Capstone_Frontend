@@ -24,7 +24,8 @@ const DisplayCardio = (props) => {
 
     return (
         <div>
-            <h1>Cardio Log</h1>
+            <h1 className="cardio-header">Daily Cardio Log</h1>
+            <p className="cardio-para">Enter data below to log your cardio Workout!</p>
 
             <AddCardio getCardio={getCardio}/>
             <table className="table-container">

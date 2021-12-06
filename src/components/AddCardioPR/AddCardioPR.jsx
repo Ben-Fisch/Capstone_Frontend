@@ -29,20 +29,31 @@ const AddCardioPR = (props) => {
     }    
 
     return (
-        <form onSubmit={handleSubmit}>
-            <div>
-                <label>Date</label>
-                <input type="date" onChange={(e)=>setDate(e.target.value) }></input>
-            
-                <label>Activity</label>
-                <input type="text" onChange={(e)=>setActivity(e.target.value) }></input>
-                <label>Distance</label>
-                <input type="number" onChange={(e)=>setDistance(e.target.value) }></input>
-                <label>Time</label>
-                <input type="number" onChange={(e)=>setTime(e.target.value) }></input>
-                <button type="submit">Log it!</button>
-            </div>
-        </form>
+        <div className="container cardio-pr-form">
+            <form onSubmit={handleSubmit}>
+                <div className="row">
+                    <div className="col">
+                        <label>Date</label>
+                        <input type="date" onChange={(e)=>setDate(e.target.value) }></input>
+                    </div>
+                    <div className="col">
+                        <label>Activity</label>
+                        <input type="text" onChange={(e)=>setActivity(e.target.value) }></input>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col">
+                        <label>Distance</label>
+                        <input type="number" onChange={(e)=>setDistance(e.target.value) }></input>
+                    </div>
+                    <div className="col">
+                        <label>Time</label>
+                        <input type="number" onChange={(e)=>setTime(e.target.value) }></input>
+                    </div>
+                </div>
+                <button type="submit" className="log-cardio-pr">Log it!</button>
+            </form>
+        </div>
     )
 }
 export default AddCardioPR

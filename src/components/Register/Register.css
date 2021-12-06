@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
-.container{
+.register-form{
     padding-top: 5px;
     padding-left: 25%;
     padding-right: 25%;
@@ -22,10 +22,10 @@ input[type=text], input[type=password] {
 input[type=text]:focus, input[type=password]:focus {
     background-color: #ddd;
     outline: solid;
-    outline-color: hsl(152, 94%, 57%);
+    outline-color: #3adb98;
 }
 hr {
-    border: 1px solid hsl(152, 94%, 57%);
+    border: 1px solid #3adb98;
     margin-bottom: 10px;
 }
 label{

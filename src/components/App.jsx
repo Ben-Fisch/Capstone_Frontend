@@ -12,6 +12,7 @@ import DisplayCardio from './DisplayCardio/DisplayCardio';
 import DisplayLifting from './DisplayLifting/DisplayLifting';
 import DisplayCardioPR from './DisplayCardioPR/DisplayCardioPR';
 import DisplayLiftingPR from './DisplayLiftPR/DisplayLiftPR';
+import Home from './Home/Home';
 
 class App extends Component {
     constructor(props) {
@@ -73,19 +74,11 @@ class App extends Component {
   
     }
 
-    // getWeight = async () => {
-    //     let response = await axios.get('http://127.0.0.1:8000/api/weight/weight/', { headers: { Authorization: 'Bearer ' + localStorage.getItem('token') } });
-    //     console.log(response.data)
-    //     this.setState({
-    //         weights: response.data
-    //     });
-    // }
-
 
     render() { 
         return (
             <div>
-                <NavBar/>
+                <NavBar />
                 <Switch>
                 <Route path='/Register' render={props => <Register {...props} registerNewUser={this.registerNewUser}/>} /> 
                 <Route path='/Login' render={props => <Login {...props} loginUser={this.loginUser}/>} />
@@ -93,7 +86,8 @@ class App extends Component {
                 <Route path='/Cardio' render={props => <DisplayCardio {...props} cardios={this.state.cardios} />} />
                 <Route path='/Lifting' render={props => <DisplayLifting {...props} lifts={this.state.lifts} />} />
                 <Route path='/CardioPR' render={props => <DisplayCardioPR {...props} pr_cardios={this.state.pr_cardios} />} />    
-                <Route path='/LiftingPR' render={props => <DisplayLiftingPR {...props} pr_lifts={this.state.pr_lifts} />} />    
+                <Route path='/LiftingPR' render={props => <DisplayLiftingPR {...props} pr_lifts={this.state.pr_lifts} />} />
+                <Route path='/Home' component={Home} />
                 </Switch>
                 <Footer/>
             </div>

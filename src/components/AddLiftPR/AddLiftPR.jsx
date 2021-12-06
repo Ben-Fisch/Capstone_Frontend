@@ -29,17 +29,31 @@ const AddLiftPR = (props) => {
     }    
 
     return (
-        <form onSubmit={ handleSubmit}>
-            <label>Date</label>
-            <input type="date" onChange={(e)=>setDate(e.target.value) }></input>
-            <label>Activity</label>
-            <input type="text" onChange={(e)=>setActivity(e.target.value) }></input>
-            <label>Reps</label>
-            <input type="number" onChange={(e)=>setReps(e.target.value) }></input>
-            <label>Weight</label>
-            <input type="number" onChange={(e)=>setWeight(e.target.value) }></input>
-            <button type="submit">Log it!</button>
-        </form>
+        <div className="container lift-pr-form">
+            <form onSubmit={handleSubmit}>
+                <div className="row">
+                    <div className="col">
+                        <label >Date</label>
+                        <input type="date" onChange={(e) => setDate(e.target.value)}></input>
+                    </div>
+                    <div className="col">
+                        <label>Activity</label>
+                        <input type="text" onChange={(e)=>setActivity(e.target.value) }></input>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col">
+                        <label>Reps</label>
+                        <input type="number" onChange={(e) => setReps(e.target.value)}></input>
+                    </div>
+                    <div className="col">
+                        <label>Weight</label>
+                        <input type="number" onChange={(e)=>setWeight(e.target.value) }></input>
+                    </div>
+                </div>
+                <button type="submit" className="log-lift-pr">Log it!</button>
+            </form>
+        </div>
     )
 }
 export default AddLiftPR

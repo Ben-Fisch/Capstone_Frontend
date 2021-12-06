@@ -45,7 +45,7 @@ class Register extends Component {
         return (
           
             <div    >
-                <form className="container" onSubmit={this.handleSubmit} >
+                <form className="container register-form" onSubmit={this.handleSubmit} >
                         <div >
                             <div >
                                 <div>

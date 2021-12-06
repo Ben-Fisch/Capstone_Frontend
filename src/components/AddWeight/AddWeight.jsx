@@ -24,17 +24,22 @@ const AddWeight = (props) => {
     }    
 
     return (
-        <form className="form-inline" onSubmit={handleSubmit}>
-            <div className="form-group">
-                <label for="date">Date:</label>
-                <input type="date" className="form-control" id="date" onChange={(e)=>setDate(e.target.value) }></input>
-            </div>
-            <div className="form-group">
-                <label for="weight">Weight</label>
-                <input type="number" className="form-control" id="weight" onChange={(e)=>setWeight(e.target.value) }></input>
-            </div>
-            <button type="submit" className="btn btn-primary">Submit</button>
-        </form>
+        <div className="container weight-form">
+            <form onSubmit={handleSubmit}>
+                <div className="form-group" >
+                    <label className="form-label" for="date">Date</label>
+                    <input type="date" className="form-control" id="date" onChange={(e)=>setDate(e.target.value) }></input>
+                </div>
+                <div className="form-group">
+                    <label className="form-label" for="weight">Weight</label>
+                    <input type="number" className="form-control" id="weight" onChange={(e)=>setWeight(e.target.value) }></input>
+                </div>
+                <div className="form-group">
+                    <button type="submit" className="weight-button">Log it!</button> 
+                </div>
+                
+            </form>
+        </div>
     )
 }
 export default AddWeight

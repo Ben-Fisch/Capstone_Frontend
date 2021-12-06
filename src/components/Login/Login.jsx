@@ -39,17 +39,17 @@ class Login extends Component {
           
             
                 <form onSubmit={this.handleSubmit}>
-                        <div className="container">
+                        <div className="container login-form">
                             <h1 className="loginheader">Login</h1>
                             <p className="action">Please enter your username and password!</p>
                             <hr />
-                            <div >
+                            <div className="form-group">
                                 <label for="username">Username</label>
-                                <input type="text" name= "username" placeholder="Enter Username" id="username" onChange={this.handleChange} value={this.state.username}  />    
+                                <input className="form-control" type="text" name= "username" placeholder="Enter Username" id="username" onChange={this.handleChange} value={this.state.username}  />    
                             </div>
-                            <div >
+                            <div className="form-group" >
                                 <label for="password" >Password</label>
-                                <input type="password" name= "password" placeholder="Enter Password" id="password" onChange={this.handleChange} value={this.state.password} />
+                                <input className="form-control" type="password" name= "password" placeholder="Enter Password" id="password" onChange={this.handleChange} value={this.state.password} />
                             </div>
                             
                             <div >

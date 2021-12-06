@@ -24,7 +24,8 @@ const DisplayCardioPR = (props) => {
 
     return (
         <div>
-            <h1>Cardio PR Log</h1>
+            <h1 className="cardio-pr-header">Cardio PR Log</h1>
+            <p className="cardio-pr-para">Set a cardio record? Log it!</p>
 
             <AddCardioPR getCardioPR={getCardioPR}/>
             <table className="table-container">
