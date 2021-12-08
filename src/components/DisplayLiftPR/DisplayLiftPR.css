@@ -1,3 +1,54 @@
+.display-lift-pr {
+    padding-top: 2px;
+    
+    
+  }
+
+  .pr-lift-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: large;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    
+  }
+
+  .pr-lift-table thead tr {
+    background-color: rgba(128, 128, 128, 0.5);
+    color: #ffffff;
+    text-align: center;
+    
+  }
+
+  .pr-lift-table th,
+  .pr-lift-table td {
+    padding: 12px 15px;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .pr-lift-table th {
+      font-size: x-large;
+      
+  }
+
+  .pr-lift-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.pr-lift-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.pr-lift-table tbody tr:last-of-type {
+    border-bottom: 2px solid black;
+}
+
+.pr-lift-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+
 .lift-pr-header {
     text-align: center;
 }

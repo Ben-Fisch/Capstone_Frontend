@@ -1,4 +1,3 @@
-
 import { data, options } from "../data";
 import { Line } from "react-chartjs-2";
 

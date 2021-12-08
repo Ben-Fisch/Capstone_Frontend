@@ -22,12 +22,12 @@ const DisplayLifting = (props) => {
     }, [])
 
     return (
-        <div>
+        <div className="container display-lift">
             <h1 className="lift-header">Daily Lift Log</h1>
             <p className="lift-para">Enter data below to log your lift workout!</p>
 
             <AddLift getLifts={getLifts}/>
-            <table className="table-container">
+            <table className="table lift-table">
                 <thead>
                     <tr>
                         <th>Date</th>
@@ -44,7 +44,7 @@ const DisplayLifting = (props) => {
                                 <td>{lift.activity}</td>
                                 <td>{lift.reps}</td>
                                 <td>{lift.weight} lbs</td>
-                                <td><button type="button" className="btn btn-danger" onClick={() => deleteLift(lift.id)}>Delete</button></td>
+                                <td><button type="button" className="btn btn-danger delete-lift-button" onClick={() => deleteLift(lift.id)}>Delete</button></td>
 
                             </tr>              
                         </tbody>

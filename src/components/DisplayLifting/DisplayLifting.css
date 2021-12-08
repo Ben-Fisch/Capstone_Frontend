@@ -1,3 +1,54 @@
+.display-lift {
+    padding-top: 2px;
+    
+    
+  }
+
+  .lift-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: large;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    
+  }
+
+  .lift-table thead tr {
+    background-color: rgba(128, 128, 128, 0.5);
+    color: #ffffff;
+    text-align: center;
+    
+  }
+
+  .lift-table th,
+  .lift-table td {
+    padding: 12px 15px;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .lift-table th {
+      font-size: x-large;
+      
+  }
+
+  .lift-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.lift-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.lift-table tbody tr:last-of-type {
+    border-bottom: 2px solid black;
+}
+
+.lift-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+
 .lift-header {
     text-align: center;
 }
@@ -5,3 +56,15 @@
 .lift-para {
     text-align: center;
 }
+
+/* .delete-lift-button {
+    padding: 16px 20px;
+    margin: 8px 50px;
+    border: none;
+    cursor: pointer;
+    width: 25%;
+    height: fit-content;
+    opacity: 0.9;
+    border-radius: 10px;
+    font-weight: 700;
+  } */

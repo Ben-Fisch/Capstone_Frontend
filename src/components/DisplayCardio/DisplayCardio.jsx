@@ -23,12 +23,12 @@ const DisplayCardio = (props) => {
     }, [])
 
     return (
-        <div>
+        <div className="container display-cardio">
             <h1 className="cardio-header">Daily Cardio Log</h1>
             <p className="cardio-para">Enter data below to log your cardio Workout!</p>
 
             <AddCardio getCardio={getCardio}/>
-            <table className="table-container">
+            <table className="table cardio-table">
                 <thead>
                     <tr>
                         <th>Date</th>
@@ -45,7 +45,7 @@ const DisplayCardio = (props) => {
                                 <td>{cardio.activity}</td>
                                 <td>{cardio.distance} miles</td>
                                 <td>{cardio.time} min</td>
-                                <td><button type="button" className="btn btn-danger" onClick={() => deleteCardio(cardio.id)}>Delete</button></td>
+                                <td><button type="button" className="btn btn-danger delete-cardio-button" onClick={() => deleteCardio(cardio.id)}>Delete</button></td>
 
                             </tr>              
                         </tbody>

@@ -5,30 +5,26 @@ import jwtDecode from "jwt-decode";
 import AddCardioPR from '../AddCardioPR/AddCardioPR'
 
 const DisplayCardioPR = (props) => {
-    const [pr_cardios, setPRCardios] = useState([])
+    const [pr_cardios, setPRCardios] = useState(props.pr_cardios)
 
-    const getCardioPR = async () => {
-        let response2 = await axios.get('http://127.0.0.1:8000/api/prcardio/prcardio/', { headers: { Authorization: 'Bearer ' + localStorage.getItem('token') } })
-        setPRCardios(response2.data)
-        
-    }
+    
     
     const deleteCardioPR = async (id) => {
         let response = await axios.delete('http://127.0.0.1:8000/api/prcardio/prcardio/' + id + '/', { headers: { Authorization: 'Bearer ' + localStorage.getItem('token') } });
-        getCardioPR()
+        props.getCardioPR()
     }
 
     useEffect(async() => {
-        getCardioPR()
-    }, [])
+        setPRCardios(props.pr_cardios)
+    }, [props])
 
     return (
-        <div>
+        <div className="container display-cardio-pr">
             <h1 className="cardio-pr-header">Cardio PR Log</h1>
             <p className="cardio-pr-para">Set a cardio record? Log it!</p>
 
-            <AddCardioPR getCardioPR={getCardioPR}/>
-            <table className="table-container">
+            <AddCardioPR getCardioPR={props.getCardioPR}/>
+            <table className="table cardio-pr-table">
                 <thead>
                     <tr>
                         <th>Date</th>

@@ -57,7 +57,7 @@ class Login extends Component {
                                     <button type="submit" className="loginbtn">Login</button>
                                 </div>
                                 <div className="container register">
-                                    <p>Don't have an account? <a href="/Register">Register</a> </p>
+                                    <p>Don't have an account? <a className="register-redirect" href="/Register">Register</a> </p>
                                 </div>
                                                 
                                     

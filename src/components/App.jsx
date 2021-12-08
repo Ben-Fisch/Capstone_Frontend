@@ -37,6 +37,9 @@ class App extends Component {
         } catch (error) {
             console.log(error);
         }
+        this.getWeight()
+        this.getPRLifts()
+        this.getCardioPR()
     }
 
     registerNewUser = async (user) => {
@@ -74,20 +77,37 @@ class App extends Component {
   
     }
 
+    getWeight = async () => {
+        let response = await axios.get('http://127.0.0.1:8000/api/weight/weight/', { headers: { Authorization: 'Bearer ' + localStorage.getItem('token') } })
+        this.setState({ weights: response.data })
+        
+    }
+
+    getPRLifts = async () => {
+        let response = await axios.get('http://127.0.0.1:8000/api/prlift/prlifts/', { headers: { Authorization: 'Bearer ' + localStorage.getItem('token') } })
+        this.setState({ pr_lifts: response.data })
+    }
+
+    getCardioPR = async () => {
+        let response = await axios.get('http://127.0.0.1:8000/api/prcardio/prcardio/', { headers: { Authorization: 'Bearer ' + localStorage.getItem('token') } })
+        this.setState({ pr_cardios: response.data })
+        
+    }
+
 
     render() { 
         return (
             <div>
                 <NavBar />
                 <Switch>
-                <Route path='/Register' render={props => <Register {...props} registerNewUser={this.registerNewUser}/>} /> 
-                <Route path='/Login' render={props => <Login {...props} loginUser={this.loginUser}/>} />
-                <Route path='/Weight' render={props => <DisplayWeight {...props} weights={this.state.weights} />} />
-                <Route path='/Cardio' render={props => <DisplayCardio {...props} cardios={this.state.cardios} />} />
-                <Route path='/Lifting' render={props => <DisplayLifting {...props} lifts={this.state.lifts} />} />
-                <Route path='/CardioPR' render={props => <DisplayCardioPR {...props} pr_cardios={this.state.pr_cardios} />} />    
-                <Route path='/LiftingPR' render={props => <DisplayLiftingPR {...props} pr_lifts={this.state.pr_lifts} />} />
-                <Route path='/Home' component={Home} />
+                    <Route path='/Register' render={props => <Register {...props} registerNewUser={this.registerNewUser}/>} /> 
+                    <Route path='/Login' render={props => <Login {...props} loginUser={this.loginUser}/>} />
+                    <Route path='/Weight' render={props => <DisplayWeight {...props} getWeight={this.getWeight} weights={this.state.weights} />} />
+                    <Route path='/Cardio' render={props => <DisplayCardio {...props} cardios={this.state.cardios} />} />
+                    <Route path='/Lifting' render={props => <DisplayLifting {...props} lifts={this.state.lifts} />} />
+                    <Route path='/CardioPR' render={props => <DisplayCardioPR {...props} getCardioPR={this.getCardioPR} pr_cardios={this.state.pr_cardios} />} />    
+                    <Route path='/LiftingPR' render={props => <DisplayLiftingPR {...props} getPRLifts={this.getPRLifts} pr_lifts={this.state.pr_lifts} />} />
+                    <Route path='/Home' render={props => <Home {...props} weights={this.state.weights} pr_lifts={this.state.pr_lifts} pr_cardios={this.state.pr_cardios} />} />
                 </Switch>
                 <Footer/>
             </div>

@@ -1,3 +1,52 @@
+.display-cardio-pr {
+    padding-top: 2px ;
+}
+
+.cardio-pr-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: large;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    
+  }
+
+  .cardio-pr-table thead tr {
+    background-color: rgba(128, 128, 128, 0.5);
+    color: #ffffff;
+    text-align: center;
+    
+  }
+
+  .cardio-pr-table th,
+  .cardio-pr-table td {
+    padding: 12px 15px;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .cardio-pr-table th {
+      font-size: x-large;
+      
+  }
+
+  .cardio-pr-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.ccardio-pr-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.cardio-pr-table tbody tr:last-of-type {
+    border-bottom: 2px solid black;
+}
+
+.cardio-pr-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+
 .cardio-pr-header {
     text-align: center;
 }

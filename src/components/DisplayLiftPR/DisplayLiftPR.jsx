@@ -5,29 +5,27 @@ import jwtDecode from "jwt-decode";
 import AddLiftPR from '../AddLiftPR/AddLiftPR'
 
 const DisplayLiftingPR = (props) => {
-    const [pr_lifts, setPRLifts] = useState([])
+    const [pr_lifts, setPRLifts] = useState(props.pr_lifts)
 
-    const getPRLifts = async () => {
-        let response = await axios.get('http://127.0.0.1:8000/api/prlift/prlifts/', { headers: { Authorization: 'Bearer ' + localStorage.getItem('token') } })
-        setPRLifts(response.data)
-    }
+    
 
     const deleteLiftPR = async (id) => {
         let response = await axios.delete('http://127.0.0.1:8000/api/prlift/prlifts/' + id + '/', { headers: { Authorization: 'Bearer ' + localStorage.getItem('token') } });
-        getPRLifts()
+        props.getPRLifts()
     }
     
     useEffect(async() => {
-        getPRLifts()
-    }, [])
+        setPRLifts(props.pr_lifts)
+        console.log(props.pr_lifts)
+    }, [props])
 
     return (
-        <div>
+        <div className="container display-lift-pr">
             <h1 className="lift-pr-header">Lifting Personal Record Log</h1>
             <p className="lift-pr-para">Set a lifting record? Log it!</p>
 
-            <AddLiftPR getPRLifts={getPRLifts}/>
-            <table className="table-container">
+            <AddLiftPR getPRLifts={props.getPRLifts}/>
+            <table className="table pr-lift-table">
                 <thead>
                     <tr>
                         <th>Date</th>
