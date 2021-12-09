@@ -77,6 +77,8 @@ class App extends Component {
   
     }
 
+    
+
     getWeight = async () => {
         let response = await axios.get('http://127.0.0.1:8000/api/weight/weight/', { headers: { Authorization: 'Bearer ' + localStorage.getItem('token') } })
         this.setState({ weights: response.data })

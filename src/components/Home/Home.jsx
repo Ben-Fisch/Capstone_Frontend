@@ -97,12 +97,15 @@ export default function Home(props) {
     }
   };
   return (
-    <div className="App">
-      <h1>Weight Tracker</h1>
-      <button onClick={getWeight}>click for data</button>
-      <Line data={data} options={options} />
-      <h1>Cardio Record Tracker</h1>
-      <Line data={data2} options={options2}/>
+    <div className="container chart-display">
+      <div className="row">
+        <h1>Weight Tracker</h1>
+        <Line data={data} options={options} />
+      </div>
+      <div className="row">
+        <h1>Cardio Record Tracker</h1>
+        <Line data={data2} options={options2} />
+      </div>
     </div>
   );
 }
