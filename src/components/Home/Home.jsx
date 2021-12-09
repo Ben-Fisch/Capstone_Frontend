@@ -2,6 +2,7 @@ import { Line } from "react-chartjs-2";
 import axios from "axios";
 import { useState } from "react/cjs/react.development";
 import { useEffect } from "react";
+import './Home.css'
 
 export default function Home(props) {
   const [weights, setWeights] = useState([]);
@@ -55,8 +56,8 @@ export default function Home(props) {
         label: "Weight Over Time",
         data: weights,
         fill: false,
-        backgroundColor: "rgb(100, 99, 132)",
-        borderColor: "rgba(200, 5, 200, 0.2)"
+        backgroundColor: "rgb(255, 0, 255)",
+        borderColor: "rgba(255, 0, 255, 0.3)"
       }
     ]
   };
@@ -64,7 +65,7 @@ export default function Home(props) {
  const options = {
     scales: {
       y: {
-        beginAtZero: true
+        beginAtZero: false
       }
     }
   };
@@ -76,15 +77,15 @@ export default function Home(props) {
         label: "Cardio Time",
         data: ctime,
         fill: false,
-        backgroundColor: "rgb(100, 99, 132)",
-        borderColor: "rgba(200, 5, 200, 0.2)"
+        backgroundColor: "rgb(50, 50, 200)",
+        borderColor: "rgba(50, 50, 200, 0.3)"
       },
       {
         label: "Cardio distance",
         data: cdistance,
         fill: false,
-        backgroundColor: "rgb(5, 99, 132)",
-        borderColor: "rgba(5, 5, 200, 0.2)"
+        backgroundColor: "rgb(200, 50, 90)",
+        borderColor: "rgba(200, 50, 50, 0.3)"
       }
     ]
   };
@@ -97,14 +98,19 @@ export default function Home(props) {
     }
   };
   return (
-    <div className="container chart-display">
-      <div className="row">
-        <h1>Weight Tracker</h1>
-        <Line data={data} options={options} />
-      </div>
-      <div className="row">
-        <h1>Cardio Record Tracker</h1>
-        <Line data={data2} options={options2} />
+    <div className="container home-display">
+      <h1 className="home-header">Welcome to Move Fitness!</h1>
+      <p className="home-para">The best place to track your workouts and progression</p>
+      
+      <div className="row chart-container">
+        <div className="col">
+          <h3>Weight Tracker</h3>
+          <Line data={data} options={options} />
+        </div>
+        <div className="col">
+          <h3>Cardio Record Tracker</h3>
+          <Line data={data2} options={options2} />
+        </div>
       </div>
     </div>
   );

@@ -16,15 +16,8 @@ input[type=text], input[type=password] {
     border: solid;
     background: white;
 }
-input[type=text]:focus, input[type=password]:focus {
-    background-color: #ddd;
-    outline: solid;
-    outline-color: #3adb98;
-}
-hr {
-    border: 1px solid #3adb98;
-    margin-bottom: 10px;
-}
+
+
 label{
     font-weight: 600;
 }

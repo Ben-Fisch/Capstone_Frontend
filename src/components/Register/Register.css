@@ -16,13 +16,12 @@ input[type=text], input[type=password] {
     margin: 5px 0 5px 0;
     display: inline-block;
     border: solid;
-
     background: white;
 }
 input[type=text]:focus, input[type=password]:focus {
-    background-color: #ddd;
+    /* background-color: #ddd; */
     outline: solid;
-    outline-color: #3adb98;
+    /* outline-color: #3adb98; */
 }
 hr {
     border: 1px solid #3adb98;

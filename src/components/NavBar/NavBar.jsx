@@ -14,8 +14,10 @@ const NavBar = (props) => {
     render(); {
         if (localStorage.getItem('token') == undefined) {
             return (
-                <nav>
+                <nav className="logged-out">
                     <ul>
+                        <h1 className="nav-title">Move Fitness</h1>
+                        <hr className="nav-hr" />
                         <Link to='/Login'> <li>Login</li> </Link>
                         <Link to='/Register'> <li>Register</li> </Link>
                     </ul>
@@ -24,14 +26,32 @@ const NavBar = (props) => {
         } else {
             return (
                 <nav>
+                    
                     <ul>
-                        <Link to='/Home'> <li>Home</li> </Link>
-                        <Link to='/Weight'> <li>Weight</li> </Link>
-                        <Link to='/Lifting'> <li>Lift</li> </Link>
-                        <Link to='/Cardio'> <li>Cardio</li> </Link>
-                        <Link to='/CardioPR'> <li>Cardio PR</li> </Link>
-                        <Link to='/LiftingPR'> <li>Lifting PR</li> </Link>
-                        <Link onClick={() => logoutUser()}> <li> Logout </li></Link>
+                        <h1 className="nav-title">Move Fitness</h1>
+                        <hr className="nav-hr" />
+                        <li>
+                            <Link to='/Home'> Home </Link>
+                        </li>
+                        <li>
+                            <Link to='/Weight'> <li>Weight</li> </Link>
+                        </li>
+                        <li>
+                            <Link to='/Lifting'> <li>Lift</li> </Link>
+                        </li>
+                        <li>
+                            <Link to='/Cardio'> <li>Cardio</li> </Link>
+                        </li>
+                        <li>
+                            <Link to='/CardioPR'> <li>Cardio PR</li> </Link>
+                        </li>
+                        <li>
+                            <Link to='/LiftingPR'> <li>Lifting PR</li> </Link>
+                        </li>
+                        <li>
+                            <Link onClick={() => logoutUser()}> <li> Logout </li></Link>
+                        </li>
+                        
                     </ul>
                 </nav>
             )
