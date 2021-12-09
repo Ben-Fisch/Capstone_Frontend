@@ -22,7 +22,7 @@ const AddCardioPR = (props) => {
             "user": userId
         }
         console.log(newCardioPR)
-        let response = await axios.post('http://127.0.0.1:8000/api/cardio/cardio/',newCardioPR,{ headers: { Authorization: 'Bearer ' + localStorage.getItem('token') } })
+        let response = await axios.post('http://127.0.0.1:8000/api/prcardio/prcardio/',newCardioPR,{ headers: { Authorization: 'Bearer ' + localStorage.getItem('token') } })
         console.log(response)
         props.getCardioPR()
         window.location = ('/CardioPR')

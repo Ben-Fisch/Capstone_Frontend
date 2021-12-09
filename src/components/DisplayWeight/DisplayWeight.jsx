@@ -16,7 +16,7 @@ const DisplayWeight = (props) => {
     useEffect(async () => {
         // rerender if props change
        setWeights(props.weights)
-        console.log(weights)
+        console.log(props.weights)
     }, [props])
 
     return (

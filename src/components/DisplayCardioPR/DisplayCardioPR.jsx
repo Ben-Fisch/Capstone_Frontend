@@ -16,6 +16,7 @@ const DisplayCardioPR = (props) => {
 
     useEffect(async() => {
         setPRCardios(props.pr_cardios)
+        console.log(props.pr_cardios)
     }, [props])
 
     return (
