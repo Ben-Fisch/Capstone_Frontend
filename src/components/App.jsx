@@ -38,6 +38,7 @@ class App extends Component {
             console.log(error);
         }
         this.getWeight()
+        this.getLifts()
         this.getPRLifts()
         this.getCardioPR()
     }
@@ -96,6 +97,11 @@ class App extends Component {
         
     }
 
+    getLifts = async () => {
+        let response = await axios.get('http://127.0.0.1:8000/api/lift/lifts/', { headers: { Authorization: 'Bearer ' + localStorage.getItem('token') } })
+        this.setState({ lifts: response.data })
+    }
+
 
     render() { 
         return (
@@ -106,7 +112,7 @@ class App extends Component {
                     <Route path='/Login' render={props => <Login {...props} loginUser={this.loginUser}/>} />
                     <Route path='/Weight' render={props => <DisplayWeight {...props} getWeight={this.getWeight} weights={this.state.weights} />} />
                     <Route path='/Cardio' render={props => <DisplayCardio {...props} cardios={this.state.cardios} />} />
-                    <Route path='/Lifting' render={props => <DisplayLifting {...props} lifts={this.state.lifts} />} />
+                    <Route path='/Lifting' render={props => <DisplayLifting {...props} getLifts={this.getLifts} lifts={this.state.lifts} />} />
                     <Route path='/CardioPR' render={props => <DisplayCardioPR {...props} getCardioPR={this.getCardioPR} pr_cardios={this.state.pr_cardios} />} />    
                     <Route path='/LiftingPR' render={props => <DisplayLiftingPR {...props} getPRLifts={this.getPRLifts} pr_lifts={this.state.pr_lifts} />} />
                     <Route path='/Home' render={props => <Home {...props} weights={this.state.weights} pr_lifts={this.state.pr_lifts} pr_cardios={this.state.pr_cardios} />} />
