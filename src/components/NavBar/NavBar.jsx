@@ -46,7 +46,7 @@ const NavBar = (props) => {
                             <Link to='/CardioPR'> <li>Cardio PR</li> </Link>
                         </li>
                         <li>
-                            <Link to='/LiftingPR'> <li>Lifting PR</li> </Link>
+                            <Link to='/LiftingPR'> <li>Lift PR</li> </Link>
                         </li>
                         <li>
                             <Link onClick={() => logoutUser()}> <li> Logout </li></Link>
