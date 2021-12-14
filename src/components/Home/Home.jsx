@@ -33,14 +33,14 @@ export default function Home(props) {
   const getWeight = async () => {
     let weightsArray = [];
     let datesArray = [];
-    // let response = await axios.get('http://127.0.0.1:8000/api/weight/weight/', { headers: { Authorization: 'Bearer ' + localStorage.getItem('token') } })
+  
     props.weights.map((thing) => {
       weightsArray.push(thing.weight)
       datesArray.push(thing.date)
     })
     setWeights(weightsArray);
     setDates(datesArray);
-    // console.log(response.data)
+    
   }
 
   useEffect(() => {
@@ -53,7 +53,7 @@ export default function Home(props) {
     labels:dates,
     datasets: [
       {
-        label: "Weight Over Time",
+        label: "Weight",
         data: weights,
         fill: false,
         backgroundColor: "rgb(255, 0, 255)",
@@ -81,7 +81,7 @@ export default function Home(props) {
         borderColor: "rgba(50, 50, 200, 0.3)"
       },
       {
-        label: "Cardio distance",
+        label: "Cardio Distance",
         data: cdistance,
         fill: false,
         backgroundColor: "rgb(200, 50, 90)",

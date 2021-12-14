@@ -19,7 +19,7 @@ const DisplayCardio = (props) => {
     return (
         <div className="container display-cardio">
             <h1 className="cardio-header">Daily Cardio Log</h1>
-            <p className="cardio-para">Enter data below to log your cardio Workout!</p>
+            <p className="cardio-para">Enter data below to log your cardio workout!</p>
 
             <AddCardio getCardio={props.getCardio}/>
             <table className="table cardio-table">

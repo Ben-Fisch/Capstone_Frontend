@@ -21,7 +21,7 @@ const DisplayCardioPR = (props) => {
 
     return (
         <div className="container display-cardio-pr">
-            <h1 className="cardio-pr-header">Cardio PR Log</h1>
+            <h1 className="cardio-pr-header">Cardio Personal Record Log</h1>
             <p className="cardio-pr-para">Set a cardio record? Log it!</p>
 
             <AddCardioPR getCardioPR={props.getCardioPR}/>
@@ -40,7 +40,7 @@ const DisplayCardioPR = (props) => {
                             <tr>                        
                                 <td>{cardio.date}</td>
                                 <td>{cardio.activity}</td>
-                                <td>{cardio.distance} miles</td>
+                                <td>{cardio.distance} mi</td>
                                 <td>{cardio.time} min</td>
                                 <td><button type="button" className="btn btn-danger" onClick={() => deleteCardioPR(cardio.id)}>Delete</button></td>
 

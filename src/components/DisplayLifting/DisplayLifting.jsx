@@ -19,7 +19,7 @@ const DisplayLifting = (props) => {
     return (
         <div className="container display-lift">
             <h1 className="lift-header">Daily Lift Log</h1>
-            <p className="lift-para">Enter data below to log your lift workout!</p>
+            <p className="lift-para">Enter data below to log your lifts!</p>
 
             <AddLift getLifts={props.getLifts}/>
             <table className="table lift-table">

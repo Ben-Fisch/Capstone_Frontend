@@ -16,7 +16,6 @@ const DisplayLiftingPR = (props) => {
     
     useEffect(async() => {
         setPRLifts(props.pr_lifts)
-        console.log(props.pr_lifts)
     }, [props])
 
     return (
